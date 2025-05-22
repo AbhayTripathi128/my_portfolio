@@ -17,7 +17,7 @@ const Footer = () => {
             <img src={facebookIcon} alt="Facebook" />
           </a>
           <span className="footer-separator"></span>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/AbhayTripathi128" target="_blank" rel="noopener noreferrer">
             @github
           </a>
           <span className="footer-separator"></span>

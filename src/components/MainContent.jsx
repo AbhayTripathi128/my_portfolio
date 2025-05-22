@@ -18,7 +18,7 @@ const MainContent = () => {
           <code>
             <span className="const">const</span>{" "}
             <span className="github-link">githubLink</span> ={" "}
-            <span className="url">"https://github.com/example/url"</span>
+            <span className="url">"https://github.com/AbhayTripathi128"</span>
           </code>
         </div>
       </div>

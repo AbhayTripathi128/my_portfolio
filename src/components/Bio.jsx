@@ -93,7 +93,7 @@ const Bio = () => {
         }
     };
     
-    const skills = ["HTML5", "CSS", "JavaScript", "jQuery", "React JS"];
+    const skills = ["HTML5", "CSS", "JavaScript", "jQuery", "React JS" , "Manual testing" , "Automation testing"];
     
     return (
         <BioContainer>
@@ -105,9 +105,9 @@ const Bio = () => {
                 <BioTitle variants={itemVariants}>About Me</BioTitle>
                 
                 <BioParagraph variants={itemVariants}>
-                    I have 2 years of experience in the field of software development.
-                    Dedicated software analyst II with almost two years of hands-on experience 
-                    specializing in frontend development.
+                    I have almost 3 years of experience in the field of software development.
+                    Dedicated software analyst III with almost Three years of hands-on experience 
+                    specializing in frontend development and in testing field.
                 </BioParagraph>
                 
                 <BioParagraph variants={itemVariants}>

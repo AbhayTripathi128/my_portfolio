@@ -229,7 +229,7 @@ const Contact = () => {
               onChange={handleChange}
               required
             />
-            <label>Email</label>
+            <label>Your Email ID</label>
           </InputGroup>
         ) : (
           <InputGroup>
@@ -241,7 +241,7 @@ const Contact = () => {
               onChange={handleChange}
               required
             />
-            <label>Phone</label>
+            <label>Your Phone No.</label>
           </InputGroup>
         )}
 
