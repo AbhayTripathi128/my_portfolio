@@ -1,0 +1,394 @@
+/* General styles */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  background-color: #011627;
+  color: #607B96; /* White text for contrast */
+  /* Make body a flex container to allow sticky footer */
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Changed to space-between to push contact to right */
+  align-items: center;
+  padding: 0 0 0 40px; /* Remove right padding to align contact with edge */
+  background-color: #011627;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  height: 55px;
+  position: relative;
+}
+
+.navbar a, .navbar-brand span {
+  color: #607B96;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-brand {
+  color: #607B96;
+  text-decoration: none;
+  cursor: default;
+  margin-right: 50px; /* Reduced from 200px to give more space for navbar items */
+}
+
+.navbar-brand a:hover {
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-links a {
+  color: #607B96;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px; /* Add horizontal padding to create more space */
+}
+
+/* Create a wrapper for all content except footer */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height of viewport */
+}
+
+.layout-container {
+  position: relative;
+  flex: 1 0 auto; /* This makes the content area grow */
+}
+
+/* Replace the vertical-line class with this horizontal line */
+.horizontal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55px; /* Exactly at the bottom of navbar */
+  height: 1px;
+  width: 100%;
+  background-color: #1E2D3D;
+}
+
+/* Update the separator styling to connect with horizontal line */
+.separator {
+  color: #1E2D3D;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Full height of navbar */
+  width: 20px; /* Give enough width for the bar */
+  justify-content: center; /* Center the | character */
+}
+
+/* Add this to create the connection between separators and the horizontal line */
+.separator::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  background-color: #1E2D3D;
+  top: 0;
+  bottom: 0;
+  height: 100%; /* Full height */
+  left: 50%;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #7fdbca;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #FF8A00; /* Orange color */
+  width: 0;
+  left: 50%;
+  transition: all 0s;
+}
+
+.navbar-links a:hover::after {
+  animation: expandUnderline 0.3s ease forwards;
+}
+
+.navbar-brand span:hover::after {
+  display: none;
+}
+
+/* Active link styling */
+.navbar-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FF8A00; /* Same orange as hover */
+}
+
+/* Keep the hover animation for non-active links */
+.navbar-links a:not(.active):hover::after {
+  animation: expandUnderline 0.3s ease forwards;
+}
+
+/* Add this new section for contact alignment */
+.navbar-contact {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: auto; /* Push to right */
+}
+
+.navbar-contact a {
+  color: #607B96;
+  text-decoration: none;
+  position: relative;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+}
+
+/* Apply the same hover and active styles to contact link */
+.navbar-contact a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #FF8A00;
+  width: 0;
+  left: 50%;
+  transition: all 0s;
+}
+
+.navbar-contact a:hover::after {
+  animation: expandUnderline 0.3s ease forwards;
+}
+
+.navbar-contact a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FF8A00;
+}
+
+/* Footer styling to match navbar */
+.footer {
+  display: flex;
+  justify-content: flex-start; /* Left align like navbar */
+  align-items: center;
+  padding: 0 40px;
+  background-color: #011627;
+  font-family: 'Fira Code', monospace;
+  font-weight: 500;
+  height: 55px;
+  position: relative;
+  border-top: 1px solid #1E2D3D; /* Add top border as horizontal line */
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.footer-text {
+  margin-right: 15px; /* Space between text and icons */
+  color: #607B96;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.social-links a {
+  color: #607B96;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+}
+
+/* Styles for hover effects on footer icons and text */
+.social-links a:hover {
+  color: #FF8A00; 
+}
+
+/* Style for the social icons to change color on hover */
+.social-links a:hover img {
+  filter: invert(60%) sepia(90%) saturate(1000%) hue-rotate(360deg) brightness(101%) contrast(106%);
+}
+
+/* Vertical separator lines in footer */
+.footer-separator {
+  color: #1E2D3D;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 20px;
+  justify-content: center;
+}
+
+.footer-separator::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  background-color: #1E2D3D;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 50%;
+}
+
+/* Hover effect for social links */
+.social-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #FF8A00;
+  width: 0;
+  left: 50%;
+  transition: all 0s;
+}
+
+.social-links a:hover::after {
+  animation: expandUnderline 0.3s ease forwards;
+}
+
+/* Hamburger Icon Styles */
+.hamburger {
+  display: none; /* Shown only on mobile/tablet */
+  flex-direction: column;
+  justify-content: space-around;
+  height: 25px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #607B96;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger .line.open.line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger .line.open.line2 {
+  opacity: 0;
+}
+.hamburger .line.open.line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* New styles for the nav-menu-container */
+.nav-menu-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Navbar Styles - Updated */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+  
+  .hamburger {
+    display: flex;
+    z-index: 1001; /* Ensure hamburger stays on top */
+  }
+  
+  .nav-menu-container {
+    display: none;
+    position: fixed;
+    top: 55px; /* Height of navbar */
+    left: 0;
+    width: 100%;
+    background-color: #011627;
+    z-index: 1000; /* Important - ensure it's above other content */
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #1E2D3D;
+  }
+  
+  .nav-menu-container.active {
+    display: flex;
+  }
+  
+  .navbar-links, 
+  .navbar-contact {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  
+  .navbar-links a, 
+  .navbar-contact a {
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #1E2D3D;
+    height: auto;
+    justify-content: flex-start;
+  }
+  
+  .mobile-hidden {
+    display: none;
+  }
+  
+  /* Active and hover styles for mobile need adjustment */
+  .navbar-links a.active::after,
+  .navbar-contact a.active::after {
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: auto;
+  }
+  
+  .navbar-links a:hover::after,
+  .navbar-contact a:hover::after {
+    animation: none;
+    width: 4px;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes expandUnderline {
+  0% {
+    width: 0;
+    left: 50%;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
