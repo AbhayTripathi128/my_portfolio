@@ -55,7 +55,7 @@ const Education = () => {
                     <div className={`education-card ${animate ? 'animate-2' : ''}`}>
                         <div className="card-content">
                             <div className="education-year">2018</div>
-                            <h3 className="institution">HBEC</h3>
+                            <h3 className="institution">Heliger Borden Education Center</h3>
                             <p className="degree">XIIth Science</p>
                             <div className="score">
                                 <span className="highlight">70%</span>
