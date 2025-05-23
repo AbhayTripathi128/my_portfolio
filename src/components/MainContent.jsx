@@ -8,12 +8,12 @@ const MainContent = () => {
         {/* Left Text Section */}
         <div className="text-section">
           <h1>| Hi all. I am |</h1>
-          <h2 className="nayu5 meme">Abhay Tripathi</h2> {/* Fixed className typo */}
-          <p className="Fr-aontend">&gt; Front-end developer</p>
+          <h2 className="name">Abhay Tripathi</h2> {/* Fixed className typo */}
+          <p className="Frontend">&gt; Front-end developer</p>
           <br />
           <br />
           <br />
-          <p className="instructions">// Browsers spend on average 40% of their time just painting pixels on your screen—so every little CSS tweak really does matter!</p>
+          <p className="instructions">// The developer Quote</p>
           <p className="instructions">// you can also see it on my Github page</p>
           <code>
             <span className="const">const</span>{" "}
