@@ -13,7 +13,7 @@ const MainContent = () => {
           <br />
           <br />
           <br />
-          <p className="instructions">// The developer Quote</p>
+          <p className="instructions">// You know you’re a frontend dev when you use ‘flex’ more in CSS than in the gym.</p>
           <p className="instructions">// you can also see it on my Github page</p>
           <code>
             <span className="const">const</span>{" "}
